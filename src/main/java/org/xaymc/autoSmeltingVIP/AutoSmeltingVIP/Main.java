@@ -2,6 +2,7 @@ package org.xaymc.autoSmeltingVIP.AutoSmeltingVIP;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -42,6 +43,8 @@ public final class Main extends JavaPlugin implements CommandExecutor, Listener 
     @EventHandler
     public void onPlayerMineBlock(BlockBreakEvent e) {
         Player player = e.getPlayer();
+        if (player.getGameMode() == GameMode.CREATIVE || player.getGameMode() == GameMode.SPECTATOR) return;
+
         if (!player.hasPermission("autosmeltingvip.use")) return;
 
         if (autoSmelt.contains(player.getUniqueId())) {
