@@ -1,0 +1,13 @@
+name: AutoSmeltingVIP
+version: '1.0-SNAPSHOT'
+main: org.xaymc.autoSmeltingVIP.AutoSmeltingVIP.Main
+api-version: '1.21'
+load: STARTUP
+authors: [ Krisovsky2115 ]
+description: Automatyczne przepalanie rud
+commands:
+  przepalaj:
+    description: Komenda do zarządzania pluginem
+    usage: /przepalaj
+    permission: autosmeltingvip.use
+    aliases: [ asv ]
